@@ -13,7 +13,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
-import android.webkit.WebChromeClient;
 import android.webkit.WebResourceRequest;
 import android.webkit.WebResourceResponse;
 import android.webkit.WebSettings;
@@ -61,7 +60,6 @@ public class WebViewActivity extends AppCompatActivity {
             }
         });
         mWebView = (WebView) findViewById(R.id.m_web_view);
-        mWebView.setWebChromeClient(mWebChromeClient);
         mWebView.setWebViewClient(mWebViewClient);
         WebSettings settings = mWebView.getSettings();
         settings.setJavaScriptEnabled(true);
@@ -71,9 +69,6 @@ public class WebViewActivity extends AppCompatActivity {
         mWebView.loadUrl(url);
     }
 
-    WebChromeClient mWebChromeClient = new WebChromeClient() {
-
-    };
     WebViewClient mWebViewClient = new WebViewClient() {
         //将约定好的空js文件替换为本地的
         @Override
