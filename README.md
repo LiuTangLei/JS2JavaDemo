@@ -1,2 +1,2 @@
 # JS2JavaDemo
-说明以后补，先创建出来
+具体内容请移步 http://www.jianshu.com/p/c20513cad758
