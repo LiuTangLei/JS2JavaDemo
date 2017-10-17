@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        function pickPhoto() {
+            try {
+                App.pickPhotoFromLibrary({"needCompress": false}, function (data) {
+                    alert(data.message);
+                    var elementById = document.getElementById('firstPhoto');
+                    elementById.src = "data:image/jpg;base64," + data.image64;
+                    elementById.width=240;
+                    elementById.height = 320;
+                    return false;
+                });
+            } catch (e) {
+                alert(e);
+            }
+        }
+
+        function takePhoto() {
+            try {
+                App.makePhotoFromCamera({}, function (data) {
+                    var elementById = document.getElementById('secondPhoto');
+                    elementById.src = "data:image/png;base64," + data.image64;
+                    elementById.width=240;
+                    elementById.height = 320;
+                })
+            } catch (e) {
+                alert(e);
+            }
+        }
+    </script>
+    <script type="text/javascript" src="http://www.baidu.com/static/native-app.js"></script>
+    <style type="text/css">
+        photo {
+            width: 240px;
+            height: 400px;
+        }
+    </style>
+</head>
+<body>
+<img id="firstPhoto" class="photo"/>
+<br/>
+<button onclick="pickPhoto()">系统相册</button>
+<br/>
+<img id="secondPhoto" class="photo"/>
+<br/>
+<button onclick="takePhoto()">去拍照</button>
+</body>
+</html>

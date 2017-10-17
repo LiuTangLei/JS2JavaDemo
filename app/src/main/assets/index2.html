@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        function doIt(i) {
+            try {
+                App.encrypt({"index": i}, function (data) {
+                    if (i == 2) {
+                        alert("我是第三个添加的哦")
+                    } else {
+                        alert(data.message);
+                    }
+                });
+            } catch (e) {
+                alert(e);
+            }
+        }
+
+        function doItNow() {
+            for (var j = 0; j < 5; j++) {
+                doIt(j);
+            }
+        }
+    </script>
+    <script type="text/javascript" src="http://www.baidu.com/static/native-app.js"></script>
+</head>
+<body>
+<P>H5是通过顺序12345并发调用同一个方法的，但是每次处理的时间并不相同，所以触发回调并没有按照顺序执行</P>
+<button onclick="doItNow()">点击开始并发</button>
+</body>
+</html>

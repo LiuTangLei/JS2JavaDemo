@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        function doItNow() {
+            try {
+                App.playSnake({}, function (data) {
+                    alert("你刚刚输入的是" + data.someWord);
+                });
+            } catch (e) {
+                alert(e);
+            }
+        }
+    </script>
+    <script type="text/javascript" src="http://www.baidu.com/static/native-app.js"></script>
+</head>
+<body>
+<button onclick="doItNow()">点击去原生某界面</button>
+</body>
+</html>

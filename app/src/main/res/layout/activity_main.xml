@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/btn_go_web1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="系统相册OR拍照"
+        android:textSize="15dp" />
+
+    <Button
+        android:id="@+id/btn_go_web2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="并发调用本地方法"
+        android:textSize="15dp" />
+
+    <Button
+        android:id="@+id/btn_go_web3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="跳转原生界面并返回数据"
+        android:textSize="15dp" />
+
+</LinearLayout>
